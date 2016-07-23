@@ -26,10 +26,14 @@ use pocketmine\utils\TextFormat;
 
 class ExtractPluginCommand extends DevToolsCommand{
 
-	public function __construct(DevTools $plugin){
-		parent::__construct("extractplugin", $plugin);
-		$this->setUsage("/extractplugin <pluginName>");
-		$this->setDescription("Extracts the source code from a Phar plugin");
+	public function __construct(DevTools $plugin, $name){
+		parent::__construct(
+			$plugin,
+			$name,
+			"Creates a Phar plugin from source code",
+			"/makeplugin <pluginName> [nogz]",
+			["mp"]
+		);
 		$this->setPermission("devtools.command.extractplugin");
 	}
 

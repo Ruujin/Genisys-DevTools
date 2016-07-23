@@ -25,10 +25,9 @@ abstract class DevToolsCommand extends Command implements PluginIdentifiableComm
 	/** @var \pocketmine\plugin\Plugin */
 	private $owningPlugin;
 
-	public function __construct($name, DevTools $plugin){
-		parent::__construct($name);
+	public function __construct(DevTools $plugin, $name, $description = "", $usageMessage = null, array $aliases = []){
+		parent::__construct($name, $description, $usageMessage, $aliases);
 		$this->owningPlugin = $plugin;
-		$this->usageMessage = "";
 	}
 
 	public function getPlugin(){
