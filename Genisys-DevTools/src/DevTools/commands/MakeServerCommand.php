@@ -30,7 +30,7 @@ class MakeServerCommand extends DevToolsCommand{
 
 		$server = $sender->getServer();
 		@mkdir($this->getPlugin()->getWorkingDirectory());		
-		$pharPath = $this->getPlugin()->getWorkingDirectory() . $server->getName() . "_" . $server->getPocketMineVersion() . ".phar";
+		$pharPath = $this->getPlugin()->getWorkingDirectory() . $server->getName() . "_" . $server->getPocketMineVersion() ."_" . date("Y-m-d_h-i-s"). ".phar";
 		if(file_exists($pharPath)){
 			$sender->sendMessage("Phar file already exists, overwriting...");
 			@\Phar::unlinkArchive($pharPath);
