@@ -15,6 +15,10 @@ This plugin is based on the original DevTools plugin by the PocketMine team. The
 * `/makeplugin <pluginName> [no-gz] [no-echo]`: Creates a plugin phar
 * `/makeserver [no-gz] [no-echo]`: Creates a server phar
 
+### Note on arguments
+* `no-gz`: Skips compressing the generated phar file
+* `no-echo`: Suppresses "Adding xxx.php" messages
+
 ## Create .phar from console
 Download [DevTools.phar](https://github.com/PocketMine/DevTools/releases)
 
