@@ -30,7 +30,7 @@ class ExtractPharCommand extends DevToolsCommand{
 			return false;
 		}
 		if(!isset($args[0]) or !file_exists($args[0])) return \false;
-		$folderPath = $sender->getServer()->getPluginPath() . "DevTools" . DIRECTORY_SEPARATOR . basename($args[0]);
+		$folderPath = $this->getPlugin()->getWorkingDirectory() . basename($args[0]);
 		if(file_exists($folderPath)){
 			$sender->sendMessage("Phar already exists, overwriting...");
 		}else{

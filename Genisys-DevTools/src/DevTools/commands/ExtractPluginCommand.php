@@ -60,7 +60,7 @@ class ExtractPluginCommand extends DevToolsCommand{
 			return true;
 		}
 
-		$folderPath = $this->getPlugin()->getDataFolder() . $description->getName()."_v".$description->getVersion()."/";
+		$folderPath = $this->getPlugin()->getWorkingDirectory() . $description->getName()."_v".$description->getVersion()."/";
 		if(file_exists($folderPath)){
 			$sender->sendMessage("Plugin files already exist, overwriting...");
 		}else{

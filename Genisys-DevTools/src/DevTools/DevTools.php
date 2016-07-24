@@ -46,6 +46,10 @@ class DevTools extends PluginBase implements CommandExecutor{
 	}
 
 	public function onEnable(){
-		@mkdir($this->getDataFolder());
+		@mkdir($this->getWorkingDirectory());
+	}
+	
+	public function getWorkingDirectory(){
+		return $this->getServer()->getPluginPath() . "Genisys-DevTools_OUTPUT" . DIRECTORY_SEPARATOR;
 	}
 }

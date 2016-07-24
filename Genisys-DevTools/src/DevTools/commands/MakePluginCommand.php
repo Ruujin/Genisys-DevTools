@@ -45,8 +45,9 @@ class MakePluginCommand extends DevToolsCommand{
 			$sender->sendMessage(TextFormat::RED . "Plugin " . $description->getName() . " is not in folder structure.");
 			return true;
 		}
-
-		$pharPath = Server::getInstance()->getPluginPath() . "DevTools" . DIRECTORY_SEPARATOR . $description->getName() . "_v" . $description->getVersion() . ".phar";
+		
+		@mkdir($this->getPlugin()->getWorkingDirectory());
+		$pharPath = $this->getPlugin()->getWorkingDirectory() . $description->getName() . "_v" . $description->getVersion() . ".phar";
 		if(file_exists($pharPath)){
 			$sender->sendMessage("Phar plugin already exists, overwriting...");
 			@\Phar::unlinkArchive($pharPath);
