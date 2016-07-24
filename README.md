@@ -1,29 +1,16 @@
-# Development Tools <em>for PocketMine-MP</em>
-
-### Warning: This version is for the new PocketMine-MP API
-
-	This program is free software: you can redistribute it and/or modify
-	it under the terms of the GNU Lesser General Public License as published by
-	the Free Software Foundation, either version 3 of the License, or
-	(at your option) any later version.
-
-	This program is distributed in the hope that it will be useful,
-	but WITHOUT ANY WARRANTY; without even the implied warranty of
-	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-	GNU Lesser General Public License for more details.
-
-	You should have received a copy of the GNU Lesser General Public License
-	along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
+# Plugin and Server Development Tools for Genisys
+This plugin is based on the original DevTools plugin by the PocketMine team. The original source code can be found [here](https://github.com/PocketMine/DevTools).
 
 ## Installation
-- Drop it into the PocketMine's `plugins/` folder.
+- Drop it into your server's `plugins/` folder.
 - Restart the server. The plugin will be loaded
 
-## Usage
-* _/makeplugin <pluginName>_: Creates a Phar plugin archive for its distribution
-* _/makeserver_: Creates a PocketMine-MP Phar archive
-* _/checkperm <node> [playerName]_: Checks a permission node
+## Commands
+* `/extractphar <pharPath>`: Extract the source code from a phar file
+* `/extractplugin <pluginName>`: Extract the source code from the specified phar plugin
+* `/loadplugin <pluginName|folderPath>`: Load a plugin manually
+* `/makeplugin <pluginName> [no-gz] [no-echo]`: Creates a plugin phar
+* `/makeserver [no-gz] [no-echo]`: Creates a server phar
 
 ## Create .phar from console
 Download [DevTools.phar](https://github.com/PocketMine/DevTools/releases)
@@ -39,3 +26,19 @@ or [ConsoleScript.php](https://github.com/PocketMine/DevTools/blob/master/src/De
 	--make="./plugin/" \
 	--relative="./plugin/" \
 	--out "plugin.phar"
+	
+	
+## Licence
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
