@@ -1,4 +1,7 @@
 # Plugin and Server Development Tools for Genisys
+
+[![Travis-CI](https://travis-ci.org/iTXTech/Genisys-DevTools.svg?branch=master)](https://travis-ci.org/iTXTech/Genisys-DevTools)
+
 This plugin is based on the original DevTools plugin by the PocketMine team. The original source code can be found [here](https://github.com/PocketMine/DevTools).
 
 ## Installation
