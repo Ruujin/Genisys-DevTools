@@ -7,7 +7,7 @@ for file in **/*.php; do
 done
 echo Lint done successfully.
 mkdir build
-php src/DevTools/ConsoleScript.php --make src --out build/Genisys-DevTools.phar
+php Genisys-DevTools/src/DevTools/ConsoleScript.php --make Genisys-DevTools --out build/Genisys-DevTools.phar
 if ls build/Genisys-DevTools*.phar >/dev/null 2>&1; then
     echo Server packaged successfully.
 else

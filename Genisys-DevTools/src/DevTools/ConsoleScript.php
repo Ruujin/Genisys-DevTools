@@ -76,7 +76,7 @@ $maxLen = 0;
 $count = 0;
 foreach(new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($folderPath)) as $file){
 	$path = rtrim(str_replace(["\\", $relativePath], ["/", ""], $file), "/");
-	if($path{0} === "." or strpos($path, "/.") !== false){
+	if($path{0} === "." or strpos($path, "/.") !== false or strpos($path, "tests") !== false){
 		continue;
 	}
 	$phar->addFile($file, $path);
