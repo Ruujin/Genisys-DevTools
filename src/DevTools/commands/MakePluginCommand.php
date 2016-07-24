@@ -22,7 +22,7 @@ class MakePluginCommand extends DevToolsCommand{
 		$this->setPermission("devtools.command.makeplugin");
 	}
 
-	public function execute(CommandSender $sender, $commandLabel, array $args){
+	public function execute(CommandSender $sender, $currentAlias, array $args){
 		if(!$this->testPermission($sender)){
 			return false;
 		}

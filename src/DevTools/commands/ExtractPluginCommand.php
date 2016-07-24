@@ -37,7 +37,7 @@ class ExtractPluginCommand extends DevToolsCommand{
 		$this->setPermission("devtools.command.extractplugin");
 	}
 
-	public function execute(CommandSender $sender, $commandLabel, array $args){
+	public function execute(CommandSender $sender, $currentAlias, array $args){
 		if(!$this->getPlugin()->isEnabled()){
 			return false;
 		}

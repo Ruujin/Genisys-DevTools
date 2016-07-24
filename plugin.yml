@@ -1,11 +1,11 @@
 name: Genisys-DevTools
 main: DevTools\DevTools
-version: 2.0.0-iTX
+version: 1.0
 api: 2.0.0
 load: STARTUP
 author: PocketMine Team & iTX Technologies LLC
-description: Helps develop and distribute PocketMine-MP plugins
-website: https://github.com/PocketMine/DevTools
+description: Plugin and server development tools for Genisys.
+website: https://github.com/iTXTech/Genisys-DevTools
 permissions:
  devtools:
   default: op
@@ -13,21 +13,21 @@ permissions:
   children:
    devtools.command:
     default: op
-    description: "Allows using all the DevTools commands"
+    description: "Allows use of all DevTools commands"
     children:
-     devtools.command.makeplugin:
+     devtools.command.extractphar:
       default: op
-      description: "Allows the creation of Phar plugins"
+      description: "Allows extracting generic phar files"
      devtools.command.extractplugin:
       default: op
-      description: "Allows the extraction of Phar plugins"
+      description: "Allows the extracting phar plugins"
+     devtools.command.loadplugin:
+      default: op
+      description: "Allows manual loading of plugins"
+     devtools.command.makeplugin:
+      default: op
+      description: "Allows the creation of phar plugins"
      devtools.command.makeserver:
       default: op
       description: "Allows the creation of a PocketMine-MP Phar"
-     devtools.command.checkperm:
-      default: true
-      description: "Allows checking a permission value"
-      children:
-       devtools.command.checkperm.other:
-        default: op
-        description: "Allows checking others permission value"
+

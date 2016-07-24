@@ -23,7 +23,7 @@ class MakeServerCommand extends DevToolsCommand{
 		$this->setPermission("devtools.command.makeserver");
 	}
 
-	public function execute(CommandSender $sender, $commandLabel, array $args){
+	public function execute(CommandSender $sender, $currentAlias, array $args){
 		if(!$this->testPermission($sender)){
 			return false;
 		}
