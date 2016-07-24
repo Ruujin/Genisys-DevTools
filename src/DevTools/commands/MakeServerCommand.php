@@ -25,9 +25,9 @@ class MakeServerCommand extends DevToolsCommand{
 
 	public function execute(CommandSender $sender, $currentAlias, array $args){
 		if(!$this->testPermission($sender)){
-			return false;
+			return true;
 		}
-
+		
 		$server = $sender->getServer();
 		$pharPath = Server::getInstance()->getPluginPath() . "DevTools" . DIRECTORY_SEPARATOR . $server->getName() . "_" . $server->getPocketMineVersion() . ".phar";
 		if(file_exists($pharPath)){

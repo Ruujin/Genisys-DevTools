@@ -5,6 +5,7 @@ namespace DevTools\commands;
 use DevTools\DevTools;
 
 use pocketmine\command\CommandSender;
+use pocketmine\event\TranslationContainer;
 use pocketmine\utils\TextFormat;
 
 class LoadPluginCommand extends DevToolsCommand{
@@ -22,15 +23,13 @@ class LoadPluginCommand extends DevToolsCommand{
 
 	public function execute(CommandSender $sender, $currentAlias, array $args){
 		if(!$this->testPermission($sender)){
-			return false;
-		}
-
-		if(count($args) === 0){
-			$sender->sendMessage(TextFormat::RED . "Usage: " . $this->usageMessage);
 			return true;
 		}
 
-		if(!isset($args[0])) return false;
+		if(count($args) === 0){
+			$sender->sendMessage(new TranslationContainer("commands.generic.usage", [$this->usageMessage]));
+			return false;
+		}
 
 		$plugin = $sender->getServer()->getPluginManager()->loadPlugin($sender->getServer()->getPluginPath() . $args[0]);
 		if($plugin != null){

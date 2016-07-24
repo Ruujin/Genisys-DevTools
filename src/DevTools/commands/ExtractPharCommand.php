@@ -5,6 +5,7 @@ namespace DevTools\commands;
 use DevTools\DevTools;
 
 use pocketmine\command\CommandSender;
+use pocketmine\event\TranslationContainer;
 use pocketmine\utils\TextFormat;
 
 class ExtractPharCommand extends DevToolsCommand{
@@ -21,12 +22,12 @@ class ExtractPharCommand extends DevToolsCommand{
 
 	public function execute(CommandSender $sender, $currentAlias, array $args){
 		if(!$this->testPermission($sender)){
-			return false;
+			return true;
 		}
 
 		if(count($args) === 0){
-			$sender->sendMessage(TextFormat::RED . "Usage: ".$this->usageMessage);
-			return true;
+			$sender->sendMessage(new TranslationContainer("commands.generic.usage", [$this->usageMessage]));
+			return false;
 		}
 		if(!isset($args[0]) or !file_exists($args[0])) return \false;
 		$folderPath = $sender->getServer()->getPluginPath() . "DevTools" . DIRECTORY_SEPARATOR . basename($args[0]);

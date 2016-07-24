@@ -19,6 +19,7 @@ namespace DevTools\commands;
 
 use DevTools\DevTools;
 use pocketmine\command\Command;
+use pocketmine\command\CommandSender;
 use pocketmine\command\PluginIdentifiableCommand;
 
 abstract class DevToolsCommand extends Command implements PluginIdentifiableCommand{

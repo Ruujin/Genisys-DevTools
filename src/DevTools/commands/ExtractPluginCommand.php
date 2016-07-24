@@ -19,6 +19,7 @@ namespace DevTools\commands;
 
 use DevTools\DevTools;
 use pocketmine\command\CommandSender;
+use pocketmine\event\TranslationContainer;
 use pocketmine\plugin\PharPluginLoader;
 use pocketmine\plugin\Plugin;
 use pocketmine\Server;
@@ -30,25 +31,21 @@ class ExtractPluginCommand extends DevToolsCommand{
 		parent::__construct(
 			$plugin,
 			$name,
-			"Creates a Phar plugin from source code",
-			"/makeplugin <pluginName> [nogz]",
-			["mp"]
+			"Extract source code from a plugin",
+			"/extract <pluginName>",
+			["ep"]
 		);
 		$this->setPermission("devtools.command.extractplugin");
 	}
 
 	public function execute(CommandSender $sender, $currentAlias, array $args){
-		if(!$this->getPlugin()->isEnabled()){
-			return false;
-		}
-
 		if(!$this->testPermission($sender)){
-			return false;
+			return true;
 		}
 
 		if(count($args) === 0){
-			$sender->sendMessage(TextFormat::RED . "Usage: ".$this->usageMessage);
-			return true;
+			$sender->sendMessage(new TranslationContainer("commands.generic.usage", [$this->usageMessage]));
+			return false;
 		}
 
 		$pluginName = trim(implode(" ", $args));
