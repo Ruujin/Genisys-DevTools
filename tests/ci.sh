@@ -9,7 +9,7 @@ echo Lint done successfully.
 mkdir build
 php Genisys-DevTools/src/DevTools/ConsoleScript.php --make Genisys-DevTools --out build/Genisys-DevTools.phar
 if ls build/Genisys-DevTools*.phar >/dev/null 2>&1; then
-    echo Server packaged successfully.
+    echo Phar packaged successfully.
 else
     echo No phar created!
     exit 1
