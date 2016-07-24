@@ -29,5 +29,5 @@ permissions:
       description: "Allows the creation of phar plugins"
      devtools.command.makeserver:
       default: op
-      description: "Allows the creation of a PocketMine-MP Phar"
+      description: "Allows the creation of a server phar"
 

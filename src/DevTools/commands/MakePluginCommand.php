@@ -34,7 +34,6 @@ class MakePluginCommand extends DevToolsCommand{
 
 		$pluginName = trim(str_replace(["no-gz", "no-echo"], "", implode(" ", $args)));
 		
-		echo "Plugin name is '".$pluginName."'.";
 		if($pluginName === "" or !(($plugin = Server::getInstance()->getPluginManager()->getPlugin($pluginName)) instanceof Plugin)){
 			$sender->sendMessage(TextFormat::RED . "Invalid plugin name, check the name case.");
 			return true;
@@ -46,10 +45,10 @@ class MakePluginCommand extends DevToolsCommand{
 			return true;
 		}
 
-		$pharPath = Server::getInstance()->getPluginPath() . DIRECTORY_SEPARATOR . "DevTools" . DIRECTORY_SEPARATOR . $description->getName() . "_v" . $description->getVersion() . ".phar";
+		$pharPath = Server::getInstance()->getPluginPath() . "DevTools" . DIRECTORY_SEPARATOR . $description->getName() . "_v" . $description->getVersion() . ".phar";
 		if(file_exists($pharPath)){
 			$sender->sendMessage("Phar plugin already exists, overwriting...");
-			@unlink($pharPath);
+			@\Phar::unlinkArchive($pharPath);
 		}
 		$phar = new \Phar($pharPath);
 		$phar->setMetadata([

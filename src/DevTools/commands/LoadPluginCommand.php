@@ -32,7 +32,7 @@ class LoadPluginCommand extends DevToolsCommand{
 
 		if(!isset($args[0])) return false;
 
-		$plugin = $sender->getServer()->getPluginManager()->loadPlugin($sender->getServer()->getPluginPath() . DIRECTORY_SEPARATOR . $args[0]);
+		$plugin = $sender->getServer()->getPluginManager()->loadPlugin($sender->getServer()->getPluginPath() . $args[0]);
 		if($plugin != null){
 			$sender->getServer()->getPluginManager()->enablePlugin($plugin);
 			return true;
