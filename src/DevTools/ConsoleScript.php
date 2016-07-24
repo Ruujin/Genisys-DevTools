@@ -80,13 +80,11 @@ foreach(new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($folderPa
 		continue;
 	}
 	$phar->addFile($file, $path);
-	if(strlen($path) > $maxLen){
-		$maxLen = strlen($path);
-	}
+	$maxLen = max($maxLen, strlen($path));	
 	echo "\r[".(++$count)."] ".str_pad($path, $maxLen, " ");
 }
 
 $phar->stopBuffering();
 
-echo "Done!\n";
+echo "\nDone!\n";
 exit(0);
