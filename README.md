@@ -20,14 +20,14 @@ This plugin is based on the original DevTools plugin by the PocketMine team. The
 * `no-echo`: Suppresses "Adding xxx.php" messages
 
 ## Create .phar from console
-Download [DevTools.phar](https://github.com/PocketMine/DevTools/releases)
+Download [Genisys-DevTools.phar](https://github.com/iTXTech/Genisys-DevTools/releases)
 
 	php -dphar.readonly=0 DevTools.phar \
 	--make="./plugin/" \
 	--relative="./plugin/" \
 	--out "plugin.phar"
 
-or [ConsoleScript.php](https://github.com/PocketMine/DevTools/blob/master/src/DevTools/ConsoleScript.php)
+or [ConsoleScript.php](https://github.com/iTXTech/Genisys-DevTools/blob/master/src/DevTools/ConsoleScript.php)
 
 	php -dphar.readonly=0 ConsoleScript.php \
 	--make="./plugin/" \
