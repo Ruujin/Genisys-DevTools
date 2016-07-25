@@ -27,7 +27,7 @@ Download [Genisys-DevTools.phar](https://github.com/iTXTech/Genisys-DevTools/rel
 	--relative="./plugin/" \
 	--out "plugin.phar"
 
-or [ConsoleScript.php](https://github.com/iTXTech/Genisys-DevTools/blob/master/src/DevTools/ConsoleScript.php)
+or [ConsoleScript.php](https://github.com/iTXTech/Genisys-DevTools/blob/master/Genisys-DevTools/src/DevTools/ConsoleScript.php)
 
 	php -dphar.readonly=0 ConsoleScript.php \
 	--make="./plugin/" \
