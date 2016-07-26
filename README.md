@@ -4,21 +4,7 @@
 
 This plugin is based on the original DevTools plugin by the PocketMine team. The original source code can be found [here](https://github.com/PocketMine/DevTools).
 
-## Installation
-- Download a phar from [here](https://github.com/iTXTech/Genisys-DevTools/releases)
-- Drop it into your server's `plugins/` folder.
-- Restart the server. The plugin will be loaded
-
-## Commands
-* `/extractphar <pharPath>`: Extract the source code from a phar file
-* `/extractplugin <pluginName>`: Extract the source code from the specified phar plugin
-* `/loadplugin <pluginName|folderPath>`: Load a plugin manually
-* `/makeplugin <pluginName> [no-gz] [no-echo]`: Creates a plugin phar
-* `/makeserver [no-gz] [no-echo]`: Creates a server phar
-
-### Note on arguments
-* `no-gz`: Skips compressing the generated phar file
-* `no-echo`: Suppresses "Adding xxx.php" messages
+Instructions for installation and use can be found in the [wiki](https://github.com/iTXTech/Genisys-DevTools/wiki).
 
 ## Create .phar from console
 Download [Genisys-DevTools.phar](https://github.com/iTXTech/Genisys-DevTools/releases)
