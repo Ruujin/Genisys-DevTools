@@ -5,6 +5,7 @@
 This plugin is based on the original DevTools plugin by the PocketMine team. The original source code can be found [here](https://github.com/PocketMine/DevTools).
 
 ## Installation
+- Download a phar from [here](https://github.com/iTXTech/Genisys-DevTools/releases)
 - Drop it into your server's `plugins/` folder.
 - Restart the server. The plugin will be loaded
 
